@@ -1,0 +1,17 @@
+{ Realizar un programa que ejecute paralelamente 2 procesos donde cada uno imprima por pantalla un numero id de proceso. }
+
+program ejercicio_1_babi;
+
+process type printId(rango:integer);
+begin
+  writeln(rango);
+end;
+
+var
+  p1, p2: printId;
+begin 
+  cobegin
+    p1(1);
+    p2(2);
+  coend;
+end.
