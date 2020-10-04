@@ -22,3 +22,11 @@ services:
       - /home/javascript/node_modules
     ports: 
       - 3000:3000
+  firebase:
+    build: 
+      context: .
+      dockerfile: Dockerfile.firebase
+    volumes: 
+      - ./unidad_6:/var/www/html
+    ports: 
+      - 3002:80
