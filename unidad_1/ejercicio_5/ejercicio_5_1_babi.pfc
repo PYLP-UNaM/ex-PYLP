@@ -1,0 +1,61 @@
+{
+    Utilice semáforos para ordenar y controlar la ejecución de los ejercicios 2.
+
+    Ejercicio 2
+    Realizar un programa que ejecute paralelamente 3 procesos:
+
+    - 2 de los procesos debe imprimir _`X`_ números pares
+    - el otro _`Y`_ números impares.
+}
+
+program ejercicio_5_1_babi;
+
+process type imprimirPares(total:integer; var s: semaphore);
+var
+	x:integer;
+	num:integer;
+begin
+	num:=2;
+    wait(s);
+    writeln('Estoy imprimiendo numero pares.');
+	for	x:=1 to total do
+	begin
+		writeln(num);
+		num:=num+2;
+	end;
+    signal(s);
+end;
+
+process type imprimirImpares(total:integer; var s: semaphore);
+var	
+	x:integer;
+	num:integer;
+begin
+	num:=1;
+    wait(s);
+    writeln('Estoy imprimiendo numero impares.');
+	for	x:=1 to total do
+	begin
+		writeln(num);
+		num:=num+2;
+	end;	
+end;
+
+var
+  p_par_1,p_par_2: imprimirPares; 
+  total_pares:integer;
+  total_impares:integer;
+  p_impar_3: imprimirImpares;
+  sem: semaphore;
+begin
+    initial(sem, 1);
+
+    total_pares:=5;
+    total_impares:=10;
+	cobegin
+		p_par_1(total_pares, sem);
+		p_par_2(total_pares, sem);
+		p_impar_3(total_impares, sem);
+	coend;
+   
+end.
