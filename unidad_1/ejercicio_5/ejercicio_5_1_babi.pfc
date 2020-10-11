@@ -13,7 +13,7 @@ program ejercicio_5_1_babi;
 process type imprimirPares(total:integer; var s: semaphore);
 var
 	x:integer;
-	num:integer;
+	num:integer; 
 begin
 	num:=2;
     wait(s);
