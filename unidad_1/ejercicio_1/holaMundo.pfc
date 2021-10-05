@@ -2,14 +2,26 @@ program ejericio_1;
 
 process type printId(rango:integer);
 begin
-  writeln('soy el proceso', rango);
+  (*writeln('soy el proceso', rango);*) 
+  write('soy el proceso');
+  write(rango);
+  writeln;
+end;
+
+process type soloString;
+begin
+  writeln('imprime solo un string');
 end;
 
 var
   p1, p2: printId;
+  p3 : soloString;
 begin 
+
   cobegin
     p1(1);
     p2(2);
+    p3;
   coend;
+
 end.
