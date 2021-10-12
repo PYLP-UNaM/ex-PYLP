@@ -3,6 +3,7 @@ program ejericio_1;
 process type printId(rango:integer);
 begin
   writeln('soy el proceso', rango);
+  
 end;
 
 var
