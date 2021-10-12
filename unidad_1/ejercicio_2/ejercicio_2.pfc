@@ -40,6 +40,7 @@ begin
 		p1(cPares);
 		p2(cPares);
 		p3(cImpares);
+		
 	coend;
    
 end.
