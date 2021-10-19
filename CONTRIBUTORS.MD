@@ -17,8 +17,7 @@
 
 ## 2021
 
-<<<<<<< HEAD
-
 - Hernan Vieira (@hernanvieira)
 - Kovalski Matias (@Matiasss11)
 - Enrique Gauto Sand (@EnriqueGautoSand)
+- Joaquin Potocki (@joaquinpotocki)
