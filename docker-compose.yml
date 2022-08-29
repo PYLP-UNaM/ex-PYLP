@@ -21,7 +21,7 @@ services:
       - ./unidad_4:/home
       - /home/javascript/node_modules
     ports: 
-      - 3000:3000
+      - 4000:3000
   firebase:
     build: 
       context: .
