@@ -1,6 +1,7 @@
 # CONTRIBUTORS PYLP
 
 ## 2020
+
 - Esteban Martini (@SuichiM)
 - German Pautsch (@gpautsch)
 - Francisco Martin Nacimiento (@martinnacimiento)
@@ -12,10 +13,12 @@
 - John Babi (@charlesbabi)
 - Facundo Silveira Do Santo (@facundSilveira)
 - Andrea Zakowicz (@Tremoteam)
+  <<<<<<< HEAD
 
 ## 2021
-- Joaquin Potocki  (@joaquinpotocki)
+
 - Hernan Vieira (@hernanvieira)
 - Kovalski Matias (@Matiasss11)
 - Enrique Gauto Sand (@EnriqueGautoSand)
+- Joaquin Potocki (@joaquinpotocki)
 - Mariela Kolb (@marielakolb)
