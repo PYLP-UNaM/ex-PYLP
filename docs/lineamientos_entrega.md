@@ -26,7 +26,6 @@ Los issues para los trabajos practicos, van a contener un label especial que ser
 
 > ⚠️ El momento de creación de los issues será consensuada con la cátedra para mantener limpio el repositorio en todo momento
 
-
 ## Creacion de issues
 
 > 💡 Para crear un issue debe ir al [repositorio oficial de la catedra](https://github.com/PYLP-UNaM/PYLP). En la pestaña de [Issues](https://github.com/PYLP-UNaM/PYLP/issues). Click en el boton `New issue`.
@@ -43,7 +42,8 @@ Para ello será necesario que el alumno cree un issue por cada ejercicio plantea
 Ejercicio <N> - <Apellido> <1erNombre>#(En caso que el apellido se repita)
 ```
 
-**Descripcion** *\*opcional*
+**Descripcion** _\*opcional_
+
 ```
 <Enunciado del ejercicio>
 ```
@@ -79,19 +79,19 @@ La descripción del issue sera un checklist de los ejercicios del tema correspon
 
 ## Creación de branch para la resolucion de ejercicios
 
-La branch creada para resolver un ejercicio siempre debe tener como origen la rama `master`.
+La branch creada para resolver un ejercicio siempre debe tener como origen la rama `main`.
 
-Se recomienda enfáticamente nombrar la rama siguiendo la siguiente convencion
+Se recomienda nombrar la rama siguiendo la siguiente convencion
 
 ```sh
-tp<tema>_ej<nro>
+tp<tema>_ej<nro>_<apellido>
 ```
 
 con ello el comando para la creacion de rama quedaría:
 
-``` bash
+```bash
 # asegurandonos siempre que partimos de master
-git checkout -b tp<tema>_ej<nro>
+git checkout -b tp<tema>_ej<nro>_<apellido>
 ```
 
 ## Nombres de archivo
@@ -106,23 +106,23 @@ ejemplo:
 
 ## Mensaje de commit
 
-En el mensaje de cada commit se debe expresar con claridad lo realizado, se puede seguir el siguiente ejemplo como formato:
+En el mensaje de cada commit se debe completar la siguiente leyenda `fixes #<issue>` donde el issue es el nro de issue asignado por github:
 
-`se soluciona el ejercicio 1 del tp1`.
+`fixes #641`.
 
 ## Pull request de los ejercicios
 
-Para hacer pull request al repositorio oficial, es decir realizar la entrega de los ejercicios,  deben:
+Para hacer pull request al repositorio oficial, es decir realizar la entrega de los ejercicios, deben:
 
 - [x] Haber realizado el ejercicio o solucion.
 - [x] Haber realizado el commit de la solucion con su mensaje correspondiente.
-- [x] Haber hecho push a su repositorio forkeado de la catedra. `git push origin tp1_ej1`.
+- [x] Haber hecho push al repositorio de la catedra. `git push origin tp1_ej1`.
 
 Una vez completado la lista de acciones, deben:
 
 1. Ir al repositorio oficial, a la pestaña de `Pull requests` y click en el boton `New pull request`.
 
-2. Seleccionar como destino del Pull Request el repositorio `PYLP-UNaM/PYLP` y la rama `2020` y como origen su repositorio y la brach que posee la solucion del ejercicio. 
+2. Seleccionar como destino del Pull Request el repositorio `PYLP-UNaM/PYLP` y la rama `2022` y como origen la brach que posee la solucion del ejercicio.
 
 el pull request debera seguir la siguiente convencion:
 
@@ -132,7 +132,8 @@ el pull request debera seguir la siguiente convencion:
 solucion Ejercicio <N> - <Apellido> <1erNombre>#(En caso que el apellido se repita)
 ```
 
-**Descripcion** *\*opcional*
+**Descripcion** _\*opcional_
+
 ```
 <Consideraciones relevantes>
 ```
@@ -141,5 +142,4 @@ solucion Ejercicio <N> - <Apellido> <1erNombre>#(En caso que el apellido se repi
 
 Es posible que surgan sugerencias o comentarios en los PR a fin de mejorar el proceso de entrega de los ejercicios, por los que deben estar atentos a las devoluciones.
 
-> ⚠️ En ningún caso el alumno debe marcar de manera manual alguna tarea como resuelta o cerrar los issues de manera manual. El cierre de los issues de los ejercicios se realizaran de manera automatica con las integraciones de los PR a la branch correspodiente.  
-
+> ⚠️ En ningún caso el alumno debe marcar de manera manual alguna tarea como resuelta o cerrar los issues de manera manual. El cierre de los issues de los ejercicios se realizaran de manera automatica con las integraciones de los PR a la branch correspodiente.
