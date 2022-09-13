@@ -24,3 +24,4 @@
 - Mariela Kolb (@marielakolb)
 
 ## 2022
+- Fernando Ivan Paredes (@fivanparedes)
