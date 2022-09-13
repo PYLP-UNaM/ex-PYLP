@@ -22,3 +22,7 @@
 - Enrique Gauto Sand (@EnriqueGautoSand)
 - Joaquin Potocki (@joaquinpotocki)
 - Mariela Kolb (@marielakolb)
+ 
+## 2022
+
+- Denis Ferreira (@Denisdif)
