@@ -22,6 +22,4 @@
 - Joaquin Potocki (@joaquinpotocki)
 - Mariela Kolb (@marielakolb)
 
-## 2022 
-
-- Martini Esteban (@SuichiM)
+## 2022
