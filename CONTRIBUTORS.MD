@@ -22,4 +22,6 @@
 - Joaquin Potocki (@joaquinpotocki)
 - Mariela Kolb (@marielakolb)
 
-## 2022
+## 2022 
+
+- Benítez, Matías Agustín (@matiasagbenitez)
