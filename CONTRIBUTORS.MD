@@ -13,7 +13,6 @@
 - John Babi (@charlesbabi)
 - Facundo Silveira Do Santo (@facundSilveira)
 - Andrea Zakowicz (@Tremoteam)
-  <<<<<<< HEAD
 
 ## 2021
 
@@ -22,9 +21,8 @@
 - Enrique Gauto Sand (@EnriqueGautoSand)
 - Joaquin Potocki (@joaquinpotocki)
 - Mariela Kolb (@marielakolb)
-
 ## 2022
 
 - Papazoglu Luis (@papazoglu)
-
-
+- Benítez, Matías Agustín (@matiasagbenitez)
+- Denis Ferreira (@Denisdif)
