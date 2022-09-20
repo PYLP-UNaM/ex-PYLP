@@ -25,4 +25,4 @@
 
 ## 2022
 
-- Jorge Fernando Rodriguez (jorferr89)
+- Jorge Fernando Rodriguez (@jorferr89)
