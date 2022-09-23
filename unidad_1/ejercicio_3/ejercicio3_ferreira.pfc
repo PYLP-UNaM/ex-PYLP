@@ -1,0 +1,36 @@
+program PrimeNumbers;
+
+function prime(n: integer): boolean; 
+var 
+  i: integer; max: real; 
+begin 
+  // Si es 2...
+  if n = 2 then 
+    prime := true
+  // Sino, si es menor o igual a 1, o par   
+  else if (n <= 1) or (n mod 2 = 0) then 
+    prime := false 
+  else begin 
+    // Calculamos el máximo divisor posible
+    prime := true; i := 3; max := sqrt(n); 
+    // Mientras no se haya encontrado un divisor y no se haya superado el máximo
+    while i <= max do begin 
+      if n mod i = 0 then begin 
+        prime := false;
+      end; 
+      i := i + 2 
+    end 
+  end 
+end; 
+
+var  
+  n: integer; 
+begin
+	cobegin
+      // Procesos paralelos para calcular si los números son primos entre 1 y 100
+		  for n := 0 to 100 do 
+    		if (prime(n)) then 
+      			write(n, ' '); 
+	coend;
+   
+end.
