@@ -33,7 +33,6 @@ var
  p1, p2, p3, p4, p5: numerosPrimos;
 
 begin
-    
     cobegin
         p1(1,20);
         p2(21,40);
@@ -41,5 +40,4 @@ begin
         p4(61,80);
         p5(81,100);  
     coend;
-
 end.
