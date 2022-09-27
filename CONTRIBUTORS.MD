@@ -22,7 +22,7 @@
 - Joaquin Potocki (@joaquinpotocki)
 - Mariela Kolb (@marielakolb)
 
-## 2022 
+## 2022
 
 - Benítez, Matías Agustín (@matiasagbenitez)
 - Denis Ferreira (@Denisdif)
@@ -32,3 +32,4 @@
 - Martin Lacheski (@martinlacheski)
 - Jorge Fernando Rodriguez (@jorferr89)
 - Facundo Rodriguez (@FacuRodriJ)
+- Tatiana Krayeski (@Maia2019)
