@@ -41,5 +41,5 @@ begin
 		p2(cPares);
 		p3(cImpares);
 	coend;
-
+   
 end.
