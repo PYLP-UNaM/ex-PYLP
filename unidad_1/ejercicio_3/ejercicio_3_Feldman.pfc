@@ -1,0 +1,49 @@
+program ejercicio_3;
+
+process type numerosPrimos(counter: integer; final_iteration:integer);
+
+var
+    divisor: integer;
+    primo: boolean;
+
+begin
+    while (counter <= final_iteration) do
+    begin
+        divisor := 2;
+        primo:= true;       
+
+        while ((divisor < counter) and primo) do
+        begin            
+            if counter mod divisor = 0 then
+            begin
+                primo:= False;
+            end;
+            divisor:=divisor+1;            
+        end;
+
+        if (primo) then
+        begin
+            write(counter, ' '); 
+        end;        
+        counter := counter + 1;
+    end;
+end;
+
+
+
+
+{ actual program from here on }
+
+var
+ p1, p2, p3, p4: numerosPrimos;
+
+begin
+
+    cobegin
+        p1(1, 25);
+        p2(26, 50);
+        p3(51, 75);
+        p4(76, 100);
+    coend;
+    
+end.
