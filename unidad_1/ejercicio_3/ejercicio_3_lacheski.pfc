@@ -1,0 +1,42 @@
+program HolaMundo3;
+
+process type prime(inicio: integer; final:integer);
+var
+    divisor: integer;
+    primo: boolean;
+
+begin
+    while (inicio <= final) do
+    begin
+        divisor := 2;
+        primo:= true;       
+
+        while ((divisor < inicio) and primo) do
+        begin            
+            if inicio mod divisor = 0 then
+            begin
+                primo:= False;
+            end;
+            divisor:=divisor+1;            
+        end;
+
+        if (primo) then
+        begin
+            write(inicio, ' '); 
+        end;        
+        inicio := inicio + 1;
+    end;
+end;
+
+
+
+var  
+  p1, p2, p3, p4: prime; 
+begin
+    cobegin
+	p1(1, 25);
+        p2(26, 50);
+        p3(51, 75);
+        p4(76, 100);  
+    coend;
+end.
