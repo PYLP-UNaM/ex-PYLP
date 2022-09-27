@@ -14,7 +14,7 @@ _\* recomendacion de la catedra_
 
 2. Para clonarse el repositorio en su maquina local. debe copiarse la url del repositorio. presionando el boton Code y el boton copiar. _(ver imagen)_
 
-![clone](../img/clone_1.png)
+![clone](../img/clone.png)
 
 3. una vez copiada la url, en una terminal debe ubicarse en la carpeta donde desea trabajar con el repositorio. y ejecutar el siguiente comando.
 
