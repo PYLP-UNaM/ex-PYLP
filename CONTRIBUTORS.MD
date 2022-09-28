@@ -13,7 +13,6 @@
 - John Babi (@charlesbabi)
 - Facundo Silveira Do Santo (@facundSilveira)
 - Andrea Zakowicz (@Tremoteam)
-  <<<<<<< HEAD
 
 ## 2021
 
