@@ -1,0 +1,46 @@
+program ejercicio_2; 
+
+process type imprimirPares(cantidad:integer);
+var
+	x: integer;
+	numero: integer;
+begin
+	numero := 2;
+	for	x := 1 to cantidad do
+	begin	
+		writeln('Par - generado: ', numero);
+		numero := numero + 2;
+	end;
+end;
+
+process type imprimirImpares(cantidad:integer);
+var	
+	x: integer;
+	numero: integer;
+begin
+	numero := 1;
+	for	x := 1 to cantidad do
+	begin
+		writeln('Impar - generado: ', numero);
+		numero := numero + 2;
+	end;	
+end;
+
+var
+    p1, p2: imprimirPares; 
+    cantPares: integer;
+    cantImpares: integer;
+    p3: imprimirImpares;
+begin
+	write('Ingrese la cantidad de números Pares:');
+	readln(cantPares);
+	write('Ingrese la cantidad de números Impares:');
+	readln(cantImpares);
+	
+    cobegin
+		p1(cantPares);
+		p2(cantPares);
+		p3(cantImpares);
+	coend;
+
+end.
