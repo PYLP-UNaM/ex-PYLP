@@ -21,3 +21,15 @@
 - Enrique Gauto Sand (@EnriqueGautoSand)
 - Joaquin Potocki (@joaquinpotocki)
 - Mariela Kolb (@marielakolb)
+
+## 2022
+
+- Benítez, Matías Agustín (@matiasagbenitez)
+- Denis Ferreira (@Denisdif)
+- Papazoglu Luis (@papazoglu)
+- Fernando Ivan Paredes (@fivanparedes)
+- Martin Feldman (@martinfeldman)
+- Martin Lacheski (@martinlacheski)
+- Jorge Fernando Rodriguez (@jorferr89)
+- Facundo Rodriguez (@FacuRodriJ)
+- Tatiana Krayeski (@Maia2019)
