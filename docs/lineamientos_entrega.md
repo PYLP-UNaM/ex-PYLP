@@ -75,7 +75,7 @@ La descripción del issue sera un checklist de los ejercicios del tema correspon
 - [ ] #[ISSUE_ID] Ejercicio[N]
 ```
 
-> 💡 Recuerde que la etiqueta `epic` sera asignada por el personal de catedra
+Las etiquetas correspondientes serán `epic` y la unidad con el tema correspondiente.
 
 ## Creación de branch para la resolucion de ejercicios
 
