@@ -1,0 +1,43 @@
+program ejercicio_3;
+
+process type numerosPrimos(desde:integer; hasta:integer);
+
+var
+    divisor: integer;
+    esPrimo: boolean;
+
+begin
+    while (desde <= hasta) do
+    begin
+        divisor := 2;
+        esPrimo:= True;       
+
+        while ((divisor < desde) and esPrimo) do
+        begin            
+            if desde mod divisor = 0 then
+            begin
+                esPrimo:= False;
+            end;
+            divisor:=divisor+1;            
+        end;
+
+        if (esPrimo) then
+begin
+            writeln (desde);
+        end;        
+        desde := desde + 1;
+    end;
+end;
+
+var
+ p1, p2, p3, p4, p5: numerosPrimos;
+
+begin
+    cobegin
+        p1(1,20);
+        p2(21,40);
+        p3(41,60);
+        p4(61,80);
+        p5(81,100);  
+    coend;
+end.
