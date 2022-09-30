@@ -9,7 +9,7 @@ begin
 
   if(number > 3)then
   begin
-    while ( (n < number / 2) and primo ) do
+    while ( (n <= number / 2) and primo ) do
     begin
       if (number mod n = 0) then
       begin
@@ -25,12 +25,13 @@ process type calcularPrimos(inicio:integer; final:integer);
 var n:integer;
 var esPrimo:boolean;
 begin
-  writeln(inicio);
-
   for n:= inicio to final do
   begin
       esPrimo:= isPrime(n);
-      writeln(n, ' ', esPrimo);
+      if(esPrimo)then
+      begin
+        write(n , ' ');
+      end;
   end;
 end;
 
