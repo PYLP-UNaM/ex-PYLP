@@ -1,0 +1,51 @@
+program HolaMundo2;
+
+process type imprimirPares(cant:integer; var s:semaphore);
+var
+	x:integer;
+	num:integer;
+begin
+	num:=2;
+	for	x:=1 to cant do
+	begin	
+        wait(s);
+		writeln('P - generado: ',num);
+		num:=num+2;
+        signal(s);
+	end;
+end;
+
+process type imprimirImpares(cant:integer; var s:semaphore);
+var	
+	x:integer;
+	num:integer;
+begin
+	num:=1;
+	for	x:=1 to cant do
+	begin
+		wait(s);
+        writeln('I - generado: ',num);
+		num:=num+2;
+        signal(s);
+	end;	
+end;
+
+var
+  p1,p2: imprimirPares; 
+  p3: imprimirImpares;
+  cPares:integer;
+  cImpares:integer;
+  sem: semaphore;
+begin
+	initial(sem, 1);
+    writeln('ingrese la cantidad de nros Pares:');
+	readln(cPares);
+	writeln('ingrese la cantidad de nros Impares:');
+	readln(cImpares);
+	cobegin
+		p1(cPares,sem);
+		p2(cPares,sem);
+		p3(cImpares,sem);
+	coend;
+   
+end.
