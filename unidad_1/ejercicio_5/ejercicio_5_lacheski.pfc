@@ -1,19 +1,81 @@
-program ejericio_1;
+program ejericio_5;
 
-process type printId(rango:integer; var s:semaphore);
+process type imprimirPares(cant:integer; var s:semaphore);
+var
+	x:integer;
+	num:integer;
 begin
-  wait(s);
-  writeln('soy el proceso', rango);
-  signal(s);
+	num:=2;
+	for	x:=1 to cant do
+	begin	
+		writeln('P - generado: ',num);
+		num:=num+2;
+	end;
 end;
 
+process type imprimirImpares(cant:integer; var s:semaphore);
+var	
+	x:integer;
+	num:integer;
+begin
+	num:=1;
+	for	x:=1 to cant do
+	begin
+		writeln('I - generado: ',num);
+		num:=num+2;
+	end;	
+end;
+
+process type prime(inicio: integer; final:integer; var s:semaphore);
 var
-  p1, p2: printId;
+    divisor: integer;
+    primo: boolean;
+
+begin
+    while (inicio <= final) do
+    begin
+        divisor := 2;
+        primo:= true;       
+
+        while ((divisor < inicio) and primo) do
+        begin            
+            if inicio mod divisor = 0 then
+            begin
+                primo:= False;
+            end;
+            divisor:=divisor+1;            
+        end;
+
+        if (primo) then
+        begin
+            write(inicio, ' '); 
+        end;        
+        inicio := inicio + 1;
+    end;
+end;
+
+
+
+var  
+  p1,p2: imprimirPares; 
+  cPares:integer;
+  cImpares:integer;
+  p3: imprimirImpares;
+  p4, p5, p6, p7: prime; 
   sem: semaphore;
-begin 
+begin
   initial(sem, 1);
-  cobegin
-    p1(1, sem);
-    p2(2, sem);
-  coend;
+    writeln('ingrese la cantidad de nros Pares:');
+	  readln(cPares);
+	  writeln('ingrese la cantidad de nros Impares:');
+	  readln(cImpares);
+    cobegin
+        p1(cPares, sem);
+		    p2(cPares, sem);
+		    p3(cImpares, sem);
+	      p4(1, 25, sem);
+        p5(26, 50, sem);
+        p6(51, 75, sem);
+        p7(76, 100, sem);  
+    coend;
 end.
