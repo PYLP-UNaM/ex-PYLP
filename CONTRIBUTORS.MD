@@ -33,3 +33,4 @@
 - Jorge Fernando Rodriguez (@jorferr89)
 - Facundo Rodriguez (@FacuRodriJ)
 - Tatiana Krayeski (@Maia2019)
+- Rodrigo Antoniak (@rodrigoantoniak)
