@@ -1,0 +1,89 @@
+program ejercicio_5_1_semaforos_paredes;
+
+(* Ejercicio 2: Numeros pares *)
+process type imprimirPares(cant: integer; var s:semaphore);
+var
+	i: integer;
+	num: integer;
+begin
+	num:=2;
+    wait(s);
+    writeln(' ');
+    write('Números pares: ');
+	for	i:=1 to cant do
+	begin	
+		write(num, ' ');
+		num:=num+2;
+	end;
+    writeln(' ');
+    signal(s);
+end;
+
+process type imprimirImpares(k: integer; var s:semaphore);
+var
+	i: integer;
+	num: integer;
+begin
+	num:=1;
+    wait(s);
+    write('Números impares: ');
+	for	i:=1 to k do
+	begin	
+		write(num,' ');
+		num:=num+2;
+	end;
+    writeln(' ');
+    signal(s);
+end;
+
+(*Ejercicio 3*)
+process type imprimirPrimo(min:integer; max:integer; var s:semaphore);
+var
+    i, j, CONT: integer;
+begin
+    CONT:=0;
+    wait(s);
+    for i:=min to max do
+    begin
+        for j:=1 to i do
+        begin
+            if (i mod j=0) then
+            begin
+                CONT:=CONT+1;
+            end;
+        end;
+        if (CONT=2) or (CONT=1) then
+        begin
+            if i<>1 then
+            begin
+                writeln('Primo: ', i);
+            end;
+        end;
+        CONT:=0;
+    end;
+    signal(s);
+end;
+
+(* Programa principal *)
+var
+    sem: semaphore;
+    p1Ej2: imprimirPares;
+    p2Ej2: imprimirImpares;
+
+    p1Ej3, p2Ej3, p3Ej3, p4Ej3, p5Ej3: imprimirPrimo;
+begin
+    initial(sem, 1);
+    cobegin
+        wait(sem);
+        p1Ej2(5, sem);
+        p2Ej2(5, sem);
+        signal(sem);
+
+        p1Ej3(1, 20, sem);
+        p2Ej3(21, 40, sem);
+        p3Ej3(41, 60, sem);
+        p4Ej3(61, 80, sem);
+        p5Ej3(81, 100, sem);
+    coend;
+
+end. 
