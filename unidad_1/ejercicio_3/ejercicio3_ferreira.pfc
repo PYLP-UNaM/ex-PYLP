@@ -1,0 +1,48 @@
+program PrimeNumbers;
+
+function isPrime(number: integer):boolean;
+var n :integer;
+var primo: boolean;
+begin
+  primo:= true;
+  n := 2;
+
+  if(number > 3)then
+  begin
+    while ( (n <= number / 2) and primo ) do
+    begin
+      if (number mod n = 0) then
+      begin
+        primo:= false;
+      end;
+      n:= n + 1;
+    end;
+    end;
+    isPrime:= primo;
+end;
+
+process type calcularPrimos(inicio:integer; final:integer);
+var n:integer;
+var esPrimo:boolean;
+begin
+  for n:= inicio to final do
+  begin
+      esPrimo:= isPrime(n);
+      if(esPrimo)then
+      begin
+        write(n , ' ');
+      end;
+  end;
+end;
+
+
+var  
+  p1, p2, p3, p4: calcularPrimos;  
+begin
+	cobegin
+    p1(1, 25);
+    p2(26, 50);
+    p3(51, 75);
+    p4(76, 100);
+	coend;   
+end.
