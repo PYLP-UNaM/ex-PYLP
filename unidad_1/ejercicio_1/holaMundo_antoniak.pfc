@@ -1,0 +1,16 @@
+program ejericio_1;
+
+process type imprimirId(rango:integer);
+  begin
+    writeln('Soy el proceso', rango);
+  end;
+
+var p1, p2: imprimirId;
+
+begin 
+  cobegin
+    p1(1);
+    p2(2);
+  coend;
+end.
+
