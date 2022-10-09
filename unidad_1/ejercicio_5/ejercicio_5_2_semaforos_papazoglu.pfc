@@ -1,0 +1,91 @@
+program HolaMundo2;
+
+process type imprimirPares(cant:integer; var s:semaphore);
+var
+	x:integer;
+	num:integer;
+begin
+	num:=2;
+	for	x:=1 to cant do
+	begin	
+        wait(s);
+		writeln('P - generado: ',num);
+		num:=num+2;
+        signal(s);
+	end;
+end;
+
+process type imprimirImpares(cant:integer; var s:semaphore);
+var	
+	x:integer;
+	num:integer;
+begin
+	num:=1;
+	for	x:=1 to cant do
+	begin
+		wait(s);
+        writeln('I - generado: ',num);
+		num:=num+2;
+        signal(s);
+	end;	
+end;
+
+process type numerosPrimos(desde:integer; hasta:integer;id:integer; var s: semaphore);
+
+var
+    divisor: integer;
+    esPrimo: boolean;
+
+begin
+    while (desde <= hasta) do
+    begin
+        divisor := 2;
+        esPrimo:= True;       
+        
+        while ((divisor < desde) and esPrimo) do
+        begin            
+            if desde mod divisor = 0 then
+            begin
+                esPrimo:= False;
+            end;
+            divisor:=divisor+1;            
+        end;
+
+        if (esPrimo) then
+        begin
+			wait(s);
+            writeln (desde,' proceso:',id);
+			signal(s);
+        end;        
+        desde := desde + 1;
+    end;
+end;
+
+
+
+var
+  p4, p5, p6, p7,P8: numerosPrimos;
+  p1,p2: imprimirPares; 
+  p3: imprimirImpares;
+  cPares:integer;
+  cImpares:integer;
+  sem: semaphore;
+begin
+
+	initial(sem, 1);
+    writeln('ingrese la cantidad de nros Pares:');
+	readln(cPares);
+	writeln('ingrese la cantidad de nros Impares:');
+	readln(cImpares);
+	cobegin
+		p1(cPares,sem);
+		p2(cPares,sem);
+		p3(cImpares,sem);
+		p4(1,20,4,sem);
+        p5(21,40,5,sem);
+        p6(41,60,6,sem);
+        p7(61,80,7,sem);
+        p8(81,100,8,sem);  
+	coend;
+   
+end.
