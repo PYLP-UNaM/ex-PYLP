@@ -1,0 +1,97 @@
+program HolaMundo2;
+
+process type imprimirPares(cant:integer; var s:semaphore);
+var
+	x:integer;
+	num:integer;
+begin
+	num:=2;
+	for	x:=1 to cant do
+	begin	
+        wait(s);
+		writeln('P - generado: ',num);
+		num:=num+2;
+        signal(s);
+	end;
+end;
+
+process type imprimirImpares(cant:integer; var s:semaphore);
+var	
+	x:integer;
+	num:integer;
+begin
+	num:=1;
+	for	x:=1 to cant do
+	begin
+        wait(s);
+		writeln('I - generado: ',num);
+		num:=num+2;
+        signal(s);
+	end;	
+end;
+
+
+function isPrime(number: integer):boolean;
+var n :integer;
+var primo: boolean;
+begin
+  primo:= true;
+  n := 2;
+
+  if(number > 3)then
+  begin
+    while ( (n <= number / 2) and primo ) do
+    begin
+      if (number mod n = 0) then
+      begin
+        primo:= false;
+      end;
+      n:= n + 1;
+    end;
+    end;
+    isPrime:= primo;
+end;
+
+process type calcularPrimos(inicio:integer; final:integer; var s:semaphore);
+var n:integer;
+var esPrimo:boolean;
+begin
+    wait(s);
+        for n:= inicio to final do
+        begin
+            esPrimo:= isPrime(n);
+            if(esPrimo)then
+            begin
+            write(n , ' ');
+            end;
+        end;
+    signal(s);
+end;
+
+var
+    pb1, pb2, pb3, pb4: calcularPrimos;  
+    p1,p2: imprimirPares; 
+    cPares:integer;
+    cImpares:integer;
+    p3: imprimirImpares;
+    sem: semaphore;
+begin
+    initial(sem, 1);
+	writeln('ingrese la cantidad de nros Pares:');
+	readln(cPares);
+	writeln('ingrese la cantidad de nros Impares:');
+	readln(cImpares);
+    
+	cobegin
+
+        p1(cPares, sem);
+		p2(cPares, sem);
+		p3(cImpares, sem);
+        
+        pb1(1, 25, sem);
+        pb2(26, 50, sem);
+        pb3(51, 75, sem);
+        pb4(76, 100, sem);
+	coend;
+   
+end.
