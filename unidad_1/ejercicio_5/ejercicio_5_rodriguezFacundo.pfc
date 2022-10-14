@@ -7,9 +7,11 @@ var
 begin
 	num:=2;
 	for	x:=1 to cant do
-	begin	
-		writeln('P - generado: ',num);
+    begin	
+	wait(s);
+    	writeln('P - generado: ',num);
 		num:=num+2;
+    signal(s);
 	end;
 end;
 
@@ -21,8 +23,10 @@ begin
 	num:=1;
 	for	x:=1 to cant do
 	begin
+    wait(s);
 		writeln('I - generado: ',num);
 		num:=num+2;
+    signal(s);
 	end;	
 end;
 
@@ -32,6 +36,7 @@ var
     primo: boolean;
 
 begin
+    wait(s);
     while (inicio <= final) do
     begin
         divisor := 2;
@@ -52,6 +57,7 @@ begin
         end;        
         inicio := inicio + 1;
     end;
+    signal(s);
 end;
 
 
