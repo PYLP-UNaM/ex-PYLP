@@ -6,7 +6,9 @@ process type imprimirPares(cant:integer; var s:semaphore);
 		num:=2;
 		for x:=1 to cant do
 		begin	
+			wait(s);
 			writeln('P - generado: ',num);
+			signal(s);
 			num:=num+2;
 		end;
 	end;
@@ -17,7 +19,9 @@ process type imprimirImpares(cant:integer; var s:semaphore);
 		num:=1;
 		for x:=1 to cant do
 		begin
+			wait(s);
 			writeln('I - generado: ',num);
+			signal(s);
 			num:=num+2;
 		end;	
 	end;
@@ -39,10 +43,11 @@ process type prime(inicio: integer; final:integer; var s:semaphore);
             			end;
             			divisor:=divisor+1;            
         		end;
-
         		if (primo) then
         		begin
-            			write(inicio, ' '); 
+        			wait(s);
+            			write(inicio, ' ');
+            			signal(s);
         		end;        
         		inicio := inicio + 1;
     		end;
