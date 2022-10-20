@@ -4,23 +4,24 @@ using namespace std;
 
 int main(int argc, char *argv[])
 {
-    int rank,id,size; 
-    MPI_Status status; 
+    int rank, buzon, tamanio;
+    MPI_Status estado;
 
-    MPI_Init(&argc,&argv);
-    MPI_Comm_rank(MPI_COMM_WORLD,&rank);
-    MPI_Comm_size(MPI_COMM_WORLD,&size);
-    
-    if(rank == 0)
-        MPI_Send(&rank,1,MPI_INT,rank+1,0,MPI_COMM_WORLD);
-    else
-        MPI_Recv(&id,1,MPI_INT,rank-1,0,MPI_COMM_WORLD,&status);
-    
-    if(rank < size-1)
-        MPI_Send(&rank,1,MPI_INT,rank+1,0,MPI_COMM_WORLD);
+    MPI_Init(&argc, &argv);
+    MPI_Comm_rank(MPI_COMM_WORLD, &rank);
+    MPI_Comm_size(MPI_COMM_WORLD, &tamanio);
 
-    printf("Soy el Proceso %d y he recibido %d", rank, id); 
-    
+    //Envio de mensajes
+    if (rank==0) {
+        MPI_Send(&rank,1,MPI_INT,rank+1,0,MPI_COMM_WORLD);
+    }
+    else {
+        //Recepción de mensajes
+        MPI_Recv(&buzon,1,MPI_INT,rank-1,0,MPI_COMM_WORLD,&estado);
+        cout<< "Soy el proceso "<<rank<<" y he recibido "<<buzon<<endl;
+        if (rank< tamanio -1)
+            MPI_Send(&rank,1,MPI_INT,rank+1,0,MPI_COMM_WORLD);
+    }
     MPI_Finalize();
     return 0;
 }
