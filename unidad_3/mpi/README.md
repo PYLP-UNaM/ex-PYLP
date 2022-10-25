@@ -10,18 +10,18 @@ Su principal característica es que no precisa de memoria compartida, por lo que
 
 ## Funciones
 
-|                                                                                   |                      |                 |                 |
-| --------------------------------------------------------------------------------- | -------------------- | --------------- | --------------- |
-| [**MPI_Init**](https://lsi.ugr.es/jmantas/ppr/ayuda/mpi_ayuda.php?ayuda=MPI_Init) | MPI_Iprobe           | [**MPI_Bcast**](https://lsi.ugr.es/jmantas/ppr/ayuda/mpi_ayuda.php?ayuda=MPI_Bcast)   | MPI_Cart_coords |
-| [**MPI_Finalize**](https://lsi.ugr.es/jmantas/ppr/ayuda/mpi_ayuda.php?ayuda=MPI_Finalize)                                                                  | MPI_Probe            | [**MPI_Scatter**](https://lsi.ugr.es/jmantas/ppr/ayuda/mpi_ayuda.php?ayuda=MPI_Scatter) | MPI_Cart_rank   |
-| [**MPI_Comm_rank**](https://lsi.ugr.es/jmantas/ppr/ayuda/mpi_ayuda.php?ayuda=MPI_Comm_rank)                                                                 | MPI_Get_count        | [**MPI_Gather**](https://lsi.ugr.es/jmantas/ppr/ayuda/mpi_ayuda.php?ayuda=MPI_Gather)  | MPI_Cart_shift  |
-| [**MPI_Comm_size**](https://lsi.ugr.es/jmantas/ppr/ayuda/mpi_ayuda.php?ayuda=MPI_Comm_size)                                                                 | MPI_Sendrecv         | [**MPI_Reduce**](https://lsi.ugr.es/jmantas/ppr/ayuda/mpi_ayuda.php?ayuda=MPI_Reduce)  | MPI_Type_vector |
-| [**MPI_Send**](https://lsi.ugr.es/jmantas/ppr/ayuda/mpi_ayuda.php?ayuda=MPI_Send)                                                                      | MPI_Sendrecv_replace | MPI_Allreduce   | MPI_Type_commit |
-| [**MPI_Recv**](https://lsi.ugr.es/jmantas/ppr/ayuda/mpi_ayuda.php?ayuda=MPI_Recv)                                                                      | MPI_Barrier          | MPI_Scan        | MPI_Type_free   |
-| **MPI_Isend**                                                                     | MPI_Waitall          | MPI_Comm_split  | MPI_Pack        |
-| **MPI_Irecv**                                                                     | MPI_Request_free     | MPI_Comm_free   | MPI_Unpack      |
-| MPI_Test                                                                          | MPI_Error_string     | MPI_Cart_create | MPI_Wtime       |
-| **MPI_Wait**                                                                      |                      |                 |
+|                                                                                             |                      |                                                                                         |                 |
+| ------------------------------------------------------------------------------------------- | -------------------- | --------------------------------------------------------------------------------------- | --------------- |
+| [**MPI_Init**](https://lsi.ugr.es/jmantas/ppr/ayuda/mpi_ayuda.php?ayuda=MPI_Init)           | MPI_Iprobe           | [**MPI_Bcast**](https://lsi.ugr.es/jmantas/ppr/ayuda/mpi_ayuda.php?ayuda=MPI_Bcast)     | MPI_Cart_coords |
+| [**MPI_Finalize**](https://lsi.ugr.es/jmantas/ppr/ayuda/mpi_ayuda.php?ayuda=MPI_Finalize)   | MPI_Probe            | [**MPI_Scatter**](https://lsi.ugr.es/jmantas/ppr/ayuda/mpi_ayuda.php?ayuda=MPI_Scatter) | MPI_Cart_rank   |
+| [**MPI_Comm_rank**](https://lsi.ugr.es/jmantas/ppr/ayuda/mpi_ayuda.php?ayuda=MPI_Comm_rank) | MPI_Get_count        | [**MPI_Gather**](https://lsi.ugr.es/jmantas/ppr/ayuda/mpi_ayuda.php?ayuda=MPI_Gather)   | MPI_Cart_shift  |
+| [**MPI_Comm_size**](https://lsi.ugr.es/jmantas/ppr/ayuda/mpi_ayuda.php?ayuda=MPI_Comm_size) | MPI_Sendrecv         | [**MPI_Reduce**](https://lsi.ugr.es/jmantas/ppr/ayuda/mpi_ayuda.php?ayuda=MPI_Reduce)   | MPI_Type_vector |
+| [**MPI_Send**](https://lsi.ugr.es/jmantas/ppr/ayuda/mpi_ayuda.php?ayuda=MPI_Send)           | MPI_Sendrecv_replace | MPI_Allreduce                                                                           | MPI_Type_commit |
+| [**MPI_Recv**](https://lsi.ugr.es/jmantas/ppr/ayuda/mpi_ayuda.php?ayuda=MPI_Recv)           | MPI_Barrier          | MPI_Scan                                                                                | MPI_Type_free   |
+| **MPI_Isend**                                                                               | MPI_Waitall          | MPI_Comm_split                                                                          | MPI_Pack        |
+| **MPI_Irecv**                                                                               | MPI_Request_free     | MPI_Comm_free                                                                           | MPI_Unpack      |
+| MPI_Test                                                                                    | MPI_Error_string     | MPI_Cart_create                                                                         | MPI_Wtime       |
+| **MPI_Wait**                                                                                |                      |                                                                                         |
 
 ## [Tipos de datos](https://lsi.ugr.es/jmantas/ppr/ayuda/mpi_ayuda.php?ayuda=mpi_datatypes)
 
@@ -53,3 +53,7 @@ Para ejecutar los programas es necesario correr:
 ```sh
 mpirun -np <nro_tareas> <archivo_executable>
 ```
+
+## Funciones mas comunes de de MPI
+
+[Funciones mas comunes](./docs/funciones_mpi.md)
