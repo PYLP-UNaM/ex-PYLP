@@ -56,4 +56,4 @@ mpirun -np <nro_tareas> <archivo_executable>
 
 ## Funciones mas comunes de de MPI
 
-[Funciones mas comunes](./docs/funciones_mpi.md)
+[Funciones mas comunes](../../docs/funciones_mpi.md)
