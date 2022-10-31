@@ -1,11 +1,12 @@
+#include "mpi.h"
 #include <stdio.h>
 #include <stdlib.h>
-#include <mpi.h>
+#include <iostream>
 
 #define N 5
 
 int main(int argc, char *argv[]) {
-    int rank, size, i, producto = 0;
+    int rank, size, i, producto, sumarizacionTotal = 0;
     int *vectorA, *vectorB, *vectorAlocal, *vectorBlocal;
     MPI_Status status;
 
@@ -32,15 +33,10 @@ int main(int argc, char *argv[]) {
         producto += vectorAlocal[i] * vectorBlocal[i];
     }
 
-    if (rank == 0) {
-        MPI_Reduce(MPI_IN_PLACE, &producto, 1, MPI_INT, MPI_SUM, 0, MPI_COMM_WORLD);
-    } else {
-        MPI_Reduce(&producto, NULL, 1, MPI_INT, MPI_SUM, 0, MPI_COMM_WORLD);
-    }
+    MPI_Reduce(&producto, &sumarizacionTotal, 1, MPI_INT, MPI_SUM, 0, MPI_COMM_WORLD);
 
     if (rank == 0) {
-        printf("Producto escalar: %d
-", producto);
+        printf("Producto escalar: %d \n", producto);
     }
 
     MPI_Finalize();
