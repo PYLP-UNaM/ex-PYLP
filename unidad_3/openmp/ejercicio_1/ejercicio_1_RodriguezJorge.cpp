@@ -11,7 +11,9 @@ int main (){
 int nthreads;
 int thread;
 
-// Punto 4 - En caso que se defina la variable dentro del #pragma omp parallel pasa a ser compartida 
+/* Punto 4 - En caso que se defina la variable dentro del #pragma omp parallel pasa a ser compartida, 
+   pero utlizando la cláusula "private", cada hilo realizará una copia de la variable dentro de su ejecución
+   tomando el valor que se le asigne dentro de un hilo */
 int var = 777;
 
 // Punto 2 - Ejecución por 10 hilos
