@@ -4,8 +4,6 @@ module Funciones where
 
 -- 1. Sucesor
 sucesor :: Integer -> Integer
-sucesor 2 = 4
-sucesor 4 = 8 
 sucesor x = x + 1
 
 -- 2. Doble 
@@ -36,7 +34,10 @@ division_mod (x,y) = (x `div` y, x `mod` y)
 
 -- 8. Hacer una función recursiva que devuelva el factorial de un numero.
 factorial :: Integer -> Integer
-factorial x = if (x == 1) then 1 else x * factorial(x - 1)
+factorial x 
+	| x < 0 = 0
+	| x == 0 = 1
+	| otherwise = x * factorial(x - 1)
 
 -- 9. Función anterior aplicando ajuste de patrones
 factorial_patrones :: Integer -> Integer
@@ -52,10 +53,13 @@ facAux :: (Integer, Integer, Integer) -> Integer
 facAux(it, base, total) = if (it > base) then total else facAux(it + 1, base,total * it)
 
 -- 11. Potencia
-potencia :: (Integer, Integer) -> Integer
-potencia (base, 0) = 1
-potencia (base, 1) = base
-potencia (base, exponente) = base * potencia(base, exponente - 1)
+potencia :: (Double, Integer) -> Double
+potencia (b, e)
+	| e < 0 = potencia(1/b,(-e))
+	| e == 0 = 1/1
+	| otherwise = multiplicar b e b
+  		where multiplicar x z y = if z == 1 then y
+  			else multiplicar x (z-1) (x * y)
 
 {-------------------------- FUNCIONES DE LISTA --------------------------}
 
