@@ -82,11 +82,9 @@ push (e, []) = [e]
 push (e, x:xs) = x : push(e, xs)
 
 -- 16. Filtrado de elementos de una lista según un criterio dada en una función.
-customFilter (f, []) = []
-customFilter (f, x:xs) =  if (f(x) == True) then
-                            x : customFilter(f, xs)
-                          else
-                            customFilter(f, xs)
+customFilter:: (a->Bool)->[a]->[a] 
+customFilter p [] = [] 
+customFilter p (a:y) = if (p a) then a:customFilter p y else customFilter p y 
 
 -- 17. Escribir una funcion que dada una funcion y una lista, aplique la funcion a todos los elementos de la lista. `customMap`   
 customMap (f, []) = []
