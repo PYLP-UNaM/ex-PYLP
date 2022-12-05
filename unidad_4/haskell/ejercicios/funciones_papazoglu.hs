@@ -5,8 +5,8 @@ module Funciones where
 
 -- 1. sucesor
 sucesor :: Integer -> Integer
-sucesor 2 = 4
-sucesor 4 = 8 
+sucesor 2 = 3
+sucesor 4 = 5 
 sucesor x = x + 1
 
 -- predecesor
