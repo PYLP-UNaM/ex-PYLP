@@ -1,6 +1,6 @@
 # Paradigmas y Lenguajes de Programación
 
-Repositorio oficial de la práctica de la cátedra Paradigmas y Lenguajes de Programación, de la Lic. en Sistemas de Información de la Universidad Nacional de Misiones.
+ex Repositorio oficial de la práctica de la cátedra Paradigmas y Lenguajes de Programación, de la Lic. en Sistemas de Información de la Universidad Nacional de Misiones.
 
 ## Equipo de cátedra
 
