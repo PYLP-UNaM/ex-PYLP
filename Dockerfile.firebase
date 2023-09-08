@@ -1,12 +1,23 @@
-FROM php:7.2-apache
-
-# COPY unidad_6 /var/www/html/
-
-# Instalando node
-RUN curl --silent --location https://deb.nodesource.com/setup_12.x | bash - \
-    && apt-get install --yes nodejs \
-    && apt-get install --yes build-essential
-
-RUN npm install -g firebase-tools@8.11.2
+FROM ubuntu:latest
 
 USER root
+
+ARG home_dir=/home
+
+ENV WEB_DOCUMENT_ROOT=$home_dir
+
+ENV TERM=xterm\
+    TZ=America/Argentina/Cordoba\
+    DEBIAN_FRONTEND=noninteractive
+
+WORKDIR /var/www/html/
+
+RUN apt-get update
+
+RUN apt-get install -y curl
+
+RUN curl -Lo /bin/firebase https://firebase.tools/bin/linux/latest
+
+RUN chmod +x /bin/firebase
+
+ENTRYPOINT ["tail", "-f", "/dev/null"]
